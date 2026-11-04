@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dịch vụ — Universe Studio</title>
+  <meta name="description" content="Game design, UX/UI, art direction, prototype và playtest. Khám phá cách Universe Studio đồng hành cùng bạn từ ý tưởng đến bản chơi được.">
+  <meta name="theme-color" content="#06060d">
+  <meta property="og:title" content="Dịch vụ — Universe Studio">
+  <meta property="og:description" content="Từ ý tưởng đến bản chơi được: game design, UX/UI, art direction và prototyping.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="vi_VN">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body data-page="services">
+  <a class="skip-link" href="#main">Bỏ qua nội dung</a>
+
+  <div class="aura" aria-hidden="true">
+    <span class="aura__glow aura__glow--violet"></span>
+    <span class="aura__glow aura__glow--cyan"></span>
+    <span class="aura__glow aura__glow--pink"></span>
+  </div>
+  <canvas id="starfield" class="starfield" aria-hidden="true"></canvas>
+  <div class="noise" aria-hidden="true"></div>
+
+  <div class="page-transition" aria-hidden="true">
+    <div class="page-transition__inner">
+      <span class="page-transition__mark">universe</span>
+      <span class="page-transition__bar"><span></span></span>
+    </div>
+  </div>
+
+  <header class="site-header" data-header>
+    <div class="container header__inner">
+      <a class="brand" href="index.html" aria-label="Universe — về trang chủ">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="16" r="5.8" stroke="currentColor" stroke-width="1.3"/>
+            <ellipse cx="16" cy="16" rx="13.6" ry="5.6" stroke="currentColor" stroke-width="1" opacity=".55" transform="rotate(-30 16 16)"/>
+            <circle cx="16" cy="16" r="1.7" fill="currentColor"/>
+            <circle cx="27.1" cy="8.2" r="1.3" fill="#22d3ee"/>
+          </svg>
+        </span>
+        <span class="brand__name">universe</span>
+      </a>
+
+      <nav class="nav" id="site-nav" aria-label="Điều hướng chính">
+        <ul class="nav__list">
+          <li><a class="nav__link" data-nav="home" href="index.html">Trang chủ</a></li>
+          <li><a class="nav__link" data-nav="about" href="about.html">Giới thiệu</a></li>
+          <li><a class="nav__link" data-nav="work" href="work.html">Dự án</a></li>
+          <li><a class="nav__link" data-nav="services" href="services.html">Dịch vụ</a></li>
+          <li><a class="nav__link" data-nav="contact" href="contact.html">Liên hệ</a></li>
+        </ul>
+        <div class="nav__footer">
+          <a class="btn btn--gradient" href="contact.html">
+            Bắt đầu dự án
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="nav__contact">
+            <span>Email</span>
+            <a href="mailto:hello@universe.studio">hello@universe.studio</a>
+          </div>
+          <div class="nav__socials">
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://www.behance.net" target="_blank" rel="noopener noreferrer">Behance</a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+        </div>
+      </nav>
+
+      <a class="header__cta btn btn--sm btn--ghost" href="contact.html">
+        Bắt đầu dự án
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Mở menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main" class="site-main">
+    <!-- Page hero ------------------------------------------------------------>
+    <section class="page-hero">
+      <span class="page-hero__index" aria-hidden="true">03</span>
+      <div class="container">
+        <div class="page-hero__top">
+          <span class="eyebrow reveal">Dịch vụ</span>
+          <span class="page-hero__meta">Strategy → Design → Build → Test</span>
+        </div>
+        <h1 class="page-hero__title reveal">Từ ý tưởng đến bản <span class="gradient-text">chơi được</span>.</h1>
+        <div class="page-hero__bottom">
+          <p class="page-hero__lead reveal">
+            Chúng tôi không bán những bản mockup đẹp rồi biến mất. Universe đi cùng bạn
+            qua từng lớp của trải nghiệm — từ câu hỏi chiến lược đầu tiên đến buổi
+            playtest cuối cùng trước khi ra mắt.
+          </p>
+          <div class="page-hero__stats reveal">
+            <div class="page-hero__stat">
+              <strong>04</strong>
+              <span>Nhóm dịch vụ</span>
+            </div>
+            <div class="page-hero__stat">
+              <strong>02</strong>
+              <span>Tuần tối thiểu</span>
+            </div>
+            <div class="page-hero__stat">
+              <strong>100%</strong>
+              <span>Bàn giao tài liệu</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services accordion ---------------------------------------------------->
+    <section class="section services-list-section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow reveal">Chúng tôi làm gì</span>
+            <h2 class="reveal">Bốn nhóm năng lực,<br>một trải nghiệm liền mạch.</h2>
+          </div>
+          <div class="section-head__aside reveal">
+            <p>
+              Bạn có thể chọn một nhóm dịch vụ hoặc để chúng tôi kết hợp chúng
+              thành một quy trình duy nhất.
+            </p>
+          </div>
+        </div>
+
+        <details class="service-acc reveal" id="game-design" open>
+          <summary>
+            <span class="service-acc__num">01</span>
+            <span class="service-acc__title">Game Design</span>
+            <span class="service-acc__hint">Cơ chế · Vòng lặp · Kinh tế trong game</span>
+            <span class="service-acc__icon" aria-hidden="true"></span>
+          </summary>
+          <div class="service-acc__body">
+            <p>
+              Chúng tôi thiết kế hệ thống gameplay từ nguyên tắc cốt lõi, không bắt đầu
+              bằng tính năng. Mỗi lựa chọn đều được kiểm tra bằng câu hỏi: nó tạo ra cảm
+              giác gì, và cảm giác đó có phục vụ trải nghiệm bạn muốn người chơi có không?
+            </p>
+            <ul class="check-list">
+              <li>Game pillars &amp; core loop</li>
+              <li>Hệ thống tiến trình và phần thưởng</li>
+              <li>Kinh tế trong game &amp; cân bằng</li>
+              <li>Level design và nhịp độ</li>
+              <li>Game design document (GDD)</li>
+              <li>Tinh chỉnh dựa trên playtest</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="service-acc reveal" id="ux-ui">
+          <summary>
+            <span class="service-acc__num">02</span>
+            <span class="service-acc__title">UX/UI Design</span>
+            <span class="service-acc__hint">Luồng trải nghiệm · Giao diện · Design system</span>
+            <span class="service-acc__icon" aria-hidden="true"></span>
+          </summary>
+          <div class="service-acc__body">
+            <p>
+              Giao diện của một game hay sản phẩm không chỉ là lớp áo. Đó là cách người
+              dùng hiểu, quyết định và cảm thấy tự tin. Chúng tôi thiết kế luồng trải
+              nghiệm trước, giao diện sau, và luôn kiểm chứng bằng prototype.
+            </p>
+            <ul class="check-list">
+              <li>Nghiên cứu người dùng &amp; kiến trúc thông tin</li>
+              <li>User flow, wireframe, interaction design</li>
+              <li>Game UI: HUD, menu, onboarding</li>
+              <li>Design system &amp; UI kit</li>
+              <li>Prototype tương tác độ trung thực cao</li>
+              <li>Accessibility và responsive design</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="service-acc reveal" id="art-direction">
+          <summary>
+            <span class="service-acc__num">03</span>
+            <span class="service-acc__title">Art Direction</span>
+            <span class="service-acc__hint">World-building · Nhận diện · Motion</span>
+            <span class="service-acc__icon" aria-hidden="true"></span>
+          </summary>
+          <div class="service-acc__body">
+            <p>
+              Một thế giới đáng nhớ cần một ngôn ngữ thị giác nhất quán — từ bảng màu,
+              kiểu chữ, ánh sáng đến cách một nút bấm chuyển động. Chúng tôi xây dựng
+              hệ thống đó để đội ngũ của bạn có thể mở rộng nó mà không mất đi bản sắc.
+            </p>
+            <ul class="check-list">
+              <li>Moodboard, art bible &amp; visual direction</li>
+              <li>World-building và ngôn ngữ hình ảnh</li>
+              <li>Brand identity cho studio &amp; sản phẩm</li>
+              <li>Typography, color system, iconography</li>
+              <li>Motion principles &amp; interaction feel</li>
+              <li>Art direction cho marketing assets</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="service-acc reveal" id="prototyping">
+          <summary>
+            <span class="service-acc__num">04</span>
+            <span class="service-acc__title">Prototype &amp; Playtest</span>
+            <span class="service-acc__hint">Build nhanh · Kiểm chứng · Tinh chỉnh</span>
+            <span class="service-acc__icon" aria-hidden="true"></span>
+          </summary>
+          <div class="service-acc__body">
+            <p>
+              Prototype là cách rẻ nhất để sai sớm và đúng nhanh. Chúng tôi dựng bản chơi
+              được trong thời gian ngắn, đưa cho người chơi thật, quan sát họ và biến
+              những quan sát đó thành quyết định thiết kế cụ thể.
+            </p>
+            <ul class="check-list">
+              <li>Paper prototype &amp; clickable prototype</li>
+              <li>Playable build với engine phù hợp</li>
+              <li>Kịch bản và điều phối playtest</li>
+              <li>Phân tích hành vi &amp; insight</li>
+              <li>Ưu tiên thay đổi theo tác động</li>
+              <li>Báo cáo kết quả và lộ trình tiếp theo</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- Capabilities --------------------------------------------------------->
+    <section class="section services-capabilities">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow reveal">Năng lực cốt lõi</span>
+            <h2 class="reveal">Những mảnh ghép<br>thường bị bỏ quên.</h2>
+          </div>
+          <div class="section-head__aside reveal">
+            <p>
+              Đây là những kỹ năng chúng tôi đưa vào dự án khi cần — không phải
+              danh sách để làm dày hồ sơ.
+            </p>
+          </div>
+        </div>
+
+        <div class="cap-grid">
+          <article class="cap-item reveal">
+            <span class="cap-item__num">01</span>
+            <h3>World-building</h3>
+            <p>Lịch sử, địa lý, văn hóa và luật lệ của thế giới — đủ chặt để người chơi tin.</p>
+          </article>
+          <article class="cap-item reveal" style="--reveal-delay: 50ms">
+            <span class="cap-item__num">02</span>
+            <h3>Kinh tế trong game</h3>
+            <p>Cân bằng nguồn lực, phần thưởng và động lực dài hạn mà không tạo cảm giác bị ép.</p>
+          </article>
+          <article class="cap-item reveal" style="--reveal-delay: 100ms">
+            <span class="cap-item__num">03</span>
+            <h3>Design systems</h3>
+            <p>Token, component và tài liệu để đội ngũ mở rộng sản phẩm mà vẫn nhất quán.</p>
+          </article>
+          <article class="cap-item reveal">
+            <span class="cap-item__num">04</span>
+            <h3>UX research</h3>
+            <p>Phỏng vấn, quan sát và đo lường để thay thế phỏng đoán bằng bằng chứng.</p>
+          </article>
+          <article class="cap-item reveal" style="--reveal-delay: 50ms">
+            <span class="cap-item__num">05</span>
+            <h3>Motion &amp; interaction</h3>
+            <p>Chuyển động có mục đích, giúp người dùng hiểu trạng thái và cảm nhận nhịp điệu.</p>
+          </article>
+          <article class="cap-item reveal" style="--reveal-delay: 100ms">
+            <span class="cap-item__num">06</span>
+            <h3>Narrative design</h3>
+            <p>Kể chuyện qua môi trường, cơ chế và những chi tiết không cần lời thoại.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -------------------------------------------------------------->
+    <section class="section">
+      <div class="container process__grid">
+        <div class="process__intro">
+          <span class="eyebrow reveal">Quy trình</span>
+          <h2 class="reveal">Một dự án<br>diễn ra thế nào.</h2>
+          <p class="reveal">
+            Không có quy trình nào phù hợp với mọi dự án, nhưng luôn có những câu hỏi
+            cần được trả lời đúng thứ tự.
+          </p>
+        </div>
+
+        <ol class="process__steps">
+          <li class="process-step reveal">
+            <span class="process-step__num">01</span>
+            <div>
+              <h3>Khám phá</h3>
+              <p>Phỏng vấn, nghiên cứu và thống nhất thế nào là thành công cho dự án.</p>
+            </div>
+          </li>
+          <li class="process-step reveal">
+            <span class="process-step__num">02</span>
+            <div>
+              <h3>Định hình</h3>
+              <p>Chốt trải nghiệm cốt lõi, phạm vi và những nguyên tắc thiết kế.</p>
+            </div>
+          </li>
+          <li class="process-step reveal">
+            <span class="process-step__num">03</span>
+            <div>
+              <h3>Thiết kế &amp; build</h3>
+              <p>Thiết kế, prototype và kiểm chứng song song thay vì chờ mọi thứ hoàn hảo.</p>
+            </div>
+          </li>
+          <li class="process-step reveal">
+            <span class="process-step__num">04</span>
+            <div>
+              <h3>Bàn giao</h3>
+              <p>Tài liệu, design system, training và hỗ trợ sau bàn giao.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Plans ---------------------------------------------------------------->
+    <section class="section services-plans">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow reveal">Cách hợp tác</span>
+            <h2 class="reveal">Ba cách để<br>bắt đầu.</h2>
+          </div>
+          <div class="section-head__aside reveal">
+            <p>
+              Chưa chắc dự án của bạn cần gì? Bắt đầu bằng một buổi trò chuyện
+              30 phút — miễn phí và không ràng buộc.
+            </p>
+          </div>
+        </div>
+
+        <div class="plans">
+          <article class="plan reveal">
+            <h3>Sprint</h3>
+            <p class="plan__price">Từ 2 tuần <span>/ một vấn đề</span></p>
+            <p>Phù hợp khi bạn cần kiểm chứng một ý tưởng hoặc tháo gỡ một điểm nghẽn cụ thể.</p>
+            <ul>
+              <li>Workshop khám phá 1–2 ngày</li>
+              <li>Prototype có thể chơi</li>
+              <li>Playtest 5–8 người</li>
+              <li>Báo cáo và khuyến nghị</li>
+            </ul>
+            <a class="btn btn--ghost" href="contact.html">Chọn Sprint</a>
+          </article>
+
+          <article class="plan plan--featured reveal" style="--reveal-delay: 70ms">
+            <span class="plan__badge">Phổ biến nhất</span>
+            <h3>Project</h3>
+            <p class="plan__price">8–16 tuần <span>/ dự án</span></p>
+            <p>Đồng hành từ định hình đến bàn giao, với một đội ngũ thiết kế chuyên trách.</p>
+            <ul>
+              <li>Discovery &amp; chiến lược</li>
+              <li>Thiết kế đầy đủ + design system</li>
+              <li>Prototype và 2–3 vòng playtest</li>
+              <li>Tài liệu bàn giao &amp; training</li>
+              <li>Hỗ trợ 30 ngày sau bàn giao</li>
+            </ul>
+            <a class="btn btn--gradient" href="contact.html">Chọn Project</a>
+          </article>
+
+          <article class="plan reveal" style="--reveal-delay: 140ms">
+            <h3>Partner</h3>
+            <p class="plan__price">Theo tháng <span>/ retainer</span></p>
+            <p>Một đội thiết kế mở rộng cho đội ngũ của bạn, linh hoạt theo từng giai đoạn.</p>
+            <ul>
+              <li>Số ngày làm việc linh hoạt</li>
+              <li>Tham gia sprint planning</li>
+              <li>Review thiết kế định kỳ</li>
+              <li>Ưu tiên thời gian phản hồi</li>
+              <li>Cam kết tối thiểu 3 tháng</li>
+            </ul>
+            <a class="btn btn--ghost" href="contact.html">Chọn Partner</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ ------------------------------------------------------------------>
+    <section class="section services-faq">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow reveal">Câu hỏi thường gặp</span>
+            <h2 class="reveal">Trước khi<br>chúng ta bắt đầu.</h2>
+          </div>
+          <div class="section-head__aside reveal">
+            <p>Không thấy câu trả lời bạn cần? Gửi email, chúng tôi trả lời trong hai ngày làm việc.</p>
+            <a class="link-arrow" href="contact.html">
+              Đặt câu hỏi
+              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="faq">
+          <details class="faq__item reveal">
+            <summary>
+              Universe nhận dự án ở giai đoạn nào?
+              <span class="faq__icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq__answer">
+              <p>
+                Chúng tôi tham gia từ giai đoạn ý tưởng, giữa quá trình phát triển hoặc
+                ngay trước khi ra mắt. Điều quan trọng không phải bạn đang ở đâu, mà là
+                bạn có sẵn sàng đặt câu hỏi và thay đổi nếu cần.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq__item reveal">
+            <summary>
+              Chi phí một dự án được tính như thế nào?
+              <span class="faq__icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq__answer">
+              <p>
+                Chúng tôi báo giá theo phạm vi công việc và thời gian, không theo giờ
+                rời rạc. Sau buổi trao đổi đầu tiên, bạn sẽ nhận được đề xuất gồm mục
+                tiêu, deliverables, tiến độ và mức đầu tư cụ thể.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq__item reveal">
+            <summary>
+              Chúng tôi có thể chỉ thuê một phần công việc không?
+              <span class="faq__icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq__answer">
+              <p>
+                Có. Nhiều khách hàng chỉ cần một vòng playtest, một design system hoặc
+                một buổi art direction. Chúng tôi sẽ nói thẳng nếu phạm vi đó không đủ
+                để tạo ra kết quả có ý nghĩa.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq__item reveal">
+            <summary>
+              Thời gian trung bình của một dự án là bao lâu?
+              <span class="faq__icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq__answer">
+              <p>
+                Một sprint thường kéo dài 2–4 tuần. Một dự án trọn vẹn mất 8–16 tuần tùy
+                độ phức tạp. Chúng tôi không nhận deadline không đủ thời gian để
+                playtest — vì điều đó thường khiến sản phẩm tệ hơn.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq__item reveal">
+            <summary>
+              Universe có làm việc từ xa không?
+              <span class="faq__icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq__answer">
+              <p>
+                Có. Chúng tôi làm việc với các đội ngũ ở sáu múi giờ khác nhau. Các buổi
+                quan trọng vẫn được ưu tiên họp trực tiếp hoặc qua video, và mọi quyết
+                định đều được ghi lại bằng văn bản.
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA ------------------------------------------------------------------>
+    <section class="section">
+      <div class="container">
+        <div class="cta-panel reveal">
+          <span class="eyebrow">Let's begin</span>
+          <h2>Một buổi trò chuyện 30 phút có thể tiết kiệm vài tháng mò mẫm.</h2>
+          <p>
+            Cho chúng tôi biết bạn đang ở đâu và điều gì đang cản trở. Dù chưa có brief
+            hoàn chỉnh, chúng tôi vẫn có thể giúp bạn sắp xếp lại câu hỏi.
+          </p>
+          <div class="cta-panel__actions">
+            <a class="btn btn--dark btn--lg" href="contact.html">
+              Đặt lịch trò chuyện
+              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="btn btn--ghost btn--lg" href="work.html">Xem dự án</a>
+          </div>
+          <span class="cta-panel__orbit" aria-hidden="true"></span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a class="brand" href="index.html" aria-label="Universe — về trang chủ">
+            <span class="brand__mark" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none">
+                <circle cx="16" cy="16" r="5.8" stroke="currentColor" stroke-width="1.3"/>
+                <ellipse cx="16" cy="16" rx="13.6" ry="5.6" stroke="currentColor" stroke-width="1" opacity=".55" transform="rotate(-30 16 16)"/>
+                <circle cx="16" cy="16" r="1.7" fill="currentColor"/>
+                <circle cx="27.1" cy="8.2" r="1.3" fill="#22d3ee"/>
+              </svg>
+            </span>
+            <span class="brand__name">universe</span>
+          </a>
+          <p>
+            Một studio thiết kế độc lập, tạo ra những trải nghiệm game và sản phẩm số
+            có chiều sâu.
+          </p>
+          <a class="footer__email" href="mailto:hello@universe.studio">hello@universe.studio</a>
+        </div>
+
+        <nav class="footer__nav" aria-label="Liên kết chân trang">
+          <div class="footer__col">
+            <p class="footer__heading">Studio</p>
+            <ul>
+              <li><a href="about.html">Giới thiệu</a></li>
+              <li><a href="work.html">Dự án</a></li>
+              <li><a href="services.html">Dịch vụ</a></li>
+              <li><a href="contact.html">Liên hệ</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <p class="footer__heading">Kết nối</p>
+            <ul>
+              <li><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+              <li><a href="https://www.behance.net" target="_blank" rel="noopener noreferrer">Behance <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+              <li><a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <p class="footer__heading">Ghé thăm</p>
+            <address>Tầng 4, 18 Tống Duy Tân<br>Hoàn Kiếm, Hà Nội</address>
+            <p class="mono">Thứ 2 — Thứ 6<br>09:00 — 18:00</p>
+          </div>
+        </nav>
+      </div>
+
+      <div class="footer__word" aria-hidden="true"><span>universe</span></div>
+
+      <div class="footer__bottom">
+        <span>© <span data-year>2026</span> Universe Studio</span>
+        <span>Made with curiosity in Hà Nội</span>
+        <button class="footer__to-top" type="button" data-to-top>
+          Về đầu trang
+          <span aria-hidden="true">↑</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

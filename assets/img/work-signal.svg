@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 750" role="img" aria-label="Signal/Noise — poster nhận diện với kiểu chữ đậm trên nền kem">
+  <defs>
+    <linearGradient id="sig-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f4efe4"/>
+      <stop offset="1" stop-color="#e7dfcf"/>
+    </linearGradient>
+    <filter id="sig-noise">
+      <feTurbulence type="fractalNoise" baseFrequency=".75" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <pattern id="sig-grid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M50 0H0V50" fill="none" stroke="#141414" stroke-opacity=".06"/>
+    </pattern>
+  </defs>
+
+  <rect width="1000" height="750" fill="url(#sig-bg)"/>
+  <rect width="1000" height="750" fill="url(#sig-grid)"/>
+
+  <circle cx="790" cy="252" r="130" fill="#ff4d1c"/>
+  <circle cx="790" cy="252" r="130" fill="none" stroke="#141414" stroke-width="1.5"/>
+  <path d="M660 252h260M790 122v260" stroke="#141414" stroke-width="1" opacity=".35"/>
+
+  <g fill="#141414" font-family="'Space Grotesk', 'Helvetica Neue', sans-serif">
+    <text x="58" y="272" font-size="196" font-weight="700" letter-spacing="-12">SIGNAL</text>
+    <text x="58" y="470" font-size="196" font-weight="700" letter-spacing="-12" fill="none" stroke="#141414" stroke-width="2.5">NOISE</text>
+  </g>
+
+  <g stroke="#141414" stroke-linecap="round">
+    <path d="M62 556v44M82 538v80M102 566v28M122 520v112M142 552v52M162 572v18M182 530v86M202 558v40M222 544v62M242 574v14M262 534v78M282 562v32M302 548v58M322 576v10M342 536v76M362 560v36M382 550v54M402 570v16M422 528v90M442 556v40M462 542v64M482 572v14M502 534v80M522 562v34M542 548v60M562 578v8M582 538v74M602 558v38M622 546v58M642 568v18M662 530v86M682 554v44M702 540v70M722 574v12M742 534v80M762 560v36M782 548v58M802 576v10M822 536v78M842 558v38M862 544v62M882 570v16M902 528v92M922 552v44M942 540v70" stroke-width="3" opacity=".8"/>
+  </g>
+
+  <g fill="#141414" font-family="'Space Grotesk', 'Helvetica Neue', sans-serif">
+    <text x="58" y="82" font-size="11" letter-spacing="4" opacity=".6">UNIVERSE / CASE 03</text>
+    <text x="58" y="700" font-size="32" font-weight="600" letter-spacing="-.4">Signal/Noise</text>
+    <text x="58" y="724" font-size="11" letter-spacing="3" opacity=".5">BRAND IDENTITY · ART DIRECTION · 2025</text>
+    <text x="942" y="82" font-size="11" letter-spacing="3" text-anchor="end" opacity=".6">EST. 2025</text>
+  </g>
+
+  <g transform="translate(858 604)">
+    <circle cx="0" cy="0" r="28" fill="none" stroke="#141414" stroke-width="1"/>
+    <path d="M-12 0h24M0-12v24" stroke="#141414"/>
+  </g>
+
+  <rect width="1000" height="750" filter="url(#sig-noise)" opacity=".055"/>
+</svg>

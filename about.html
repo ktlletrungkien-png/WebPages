@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Giới thiệu — Universe Studio</title>
+  <meta name="description" content="Universe là studio thiết kế độc lập tại Hà Nội: 12 người, 6 quốc gia và một niềm tin rằng thiết kế tốt là thiết kế khiến người ta muốn ở lại.">
+  <meta name="theme-color" content="#06060d">
+  <meta property="og:title" content="Giới thiệu — Universe Studio">
+  <meta property="og:description" content="Một studio nhỏ với những ý tưởng lớn. Gặp gỡ Universe.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="vi_VN">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body data-page="about">
+  <a class="skip-link" href="#main">Bỏ qua nội dung</a>
+
+  <div class="aura" aria-hidden="true">
+    <span class="aura__glow aura__glow--violet"></span>
+    <span class="aura__glow aura__glow--cyan"></span>
+    <span class="aura__glow aura__glow--pink"></span>
+  </div>
+  <canvas id="starfield" class="starfield" aria-hidden="true"></canvas>
+  <div class="noise" aria-hidden="true"></div>
+
+  <div class="page-transition" aria-hidden="true">
+    <div class="page-transition__inner">
+      <span class="page-transition__mark">universe</span>
+      <span class="page-transition__bar"><span></span></span>
+    </div>
+  </div>
+
+  <header class="site-header" data-header>
+    <div class="container header__inner">
+      <a class="brand" href="index.html" aria-label="Universe — về trang chủ">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="16" r="5.8" stroke="currentColor" stroke-width="1.3"/>
+            <ellipse cx="16" cy="16" rx="13.6" ry="5.6" stroke="currentColor" stroke-width="1" opacity=".55" transform="rotate(-30 16 16)"/>
+            <circle cx="16" cy="16" r="1.7" fill="currentColor"/>
+            <circle cx="27.1" cy="8.2" r="1.3" fill="#22d3ee"/>
+          </svg>
+        </span>
+        <span class="brand__name">universe</span>
+      </a>
+
+      <nav class="nav" id="site-nav" aria-label="Điều hướng chính">
+        <ul class="nav__list">
+          <li><a class="nav__link" data-nav="home" href="index.html">Trang chủ</a></li>
+          <li><a class="nav__link" data-nav="about" href="about.html">Giới thiệu</a></li>
+          <li><a class="nav__link" data-nav="work" href="work.html">Dự án</a></li>
+          <li><a class="nav__link" data-nav="services" href="services.html">Dịch vụ</a></li>
+          <li><a class="nav__link" data-nav="contact" href="contact.html">Liên hệ</a></li>
+        </ul>
+        <div class="nav__footer">
+          <a class="btn btn--gradient" href="contact.html">
+            Bắt đầu dự án
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="nav__contact">
+            <span>Email</span>
+            <a href="mailto:hello@universe.studio">hello@universe.studio</a>
+          </div>
+          <div class="nav__socials">
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://www.behance.net" target="_blank" rel="noopener noreferrer">Behance</a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+        </div>
+      </nav>
+
+      <a class="header__cta btn btn--sm btn--ghost" href="contact.html">
+        Bắt đầu dự án
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Mở menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main" class="site-main">
+    <!-- Page hero ------------------------------------------------------------>
+    <section class="page-hero">
+      <span class="page-hero__index" aria-hidden="true">01</span>
+      <div class="container">
+        <div class="page-hero__top">
+          <span class="eyebrow reveal">Về Universe</span>
+          <span class="page-hero__meta">Est. 2019 — Hà Nội, Việt Nam</span>
+        </div>
+        <h1 class="page-hero__title reveal">Một studio nhỏ với <span class="gradient-text">những ý tưởng lớn</span>.</h1>
+        <div class="page-hero__bottom">
+          <p class="page-hero__lead reveal">
+            Universe là tập thể gồm 12 nhà thiết kế, artist và nhà nghiên cứu. Chúng tôi tin
+            rằng trải nghiệm tốt nhất không phải là thứ hào nhoáng nhất, mà là thứ khiến
+            người ta muốn ở lại lâu hơn.
+          </p>
+          <div class="page-hero__stats reveal">
+            <div class="page-hero__stat">
+              <strong>12</strong>
+              <span>Thành viên</span>
+            </div>
+            <div class="page-hero__stat">
+              <strong>06</strong>
+              <span>Quốc gia</span>
+            </div>
+            <div class="page-hero__stat">
+              <strong>48</strong>
+              <span>Dự án</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Story ---------------------------------------------------------------->
+    <section class="section about-story">
+      <div class="container story-grid">
+        <aside class="story__aside reveal">
+          <span class="eyebrow">Câu chuyện</span>
+          <div class="story__stamp">
+            <div>
+              <strong>2019</strong>
+              Universe<br>Studio<br>Hà Nội
+            </div>
+          </div>
+        </aside>
+
+        <div class="story__body">
+          <p class="lead reveal">
+            Universe bắt đầu trong một căn hộ nhỏ ở Hà Nội, với hai chiếc laptop và một
+            niềm tin khá ngây thơ: thiết kế game có thể tử tế hơn.
+          </p>
+          <p class="reveal">
+            Năm 2019, chúng tôi nhận dự án game đầu tiên — một tựa game giải đố nhỏ với
+            ngân sách vừa đủ. Thay vì chạy theo xu hướng, chúng tôi dành phần lớn thời gian
+            để trả lời một câu hỏi: người chơi sẽ cảm thấy thế nào ở giây phút đầu tiên?
+          </p>
+          <p class="reveal">
+            Câu trả lời đó vẫn là nguyên tắc làm việc của Universe đến hôm nay. Chúng tôi
+            làm chậm ở phần đầu, kỹ ở phần giữa và thẳng thắn ở phần cuối. Không có bản thiết
+            kế nào là “xong” nếu nó chưa từng được chơi thử.
+          </p>
+          <blockquote class="story__pull reveal">
+            Chúng tôi không thiết kế để gây ấn tượng. Chúng tôi thiết kế để tạo ra cảm giác.
+          </blockquote>
+          <p class="reveal">
+            Đến nay, studio đã đồng hành cùng các nhà phát hành game, startup sản phẩm và
+            thương hiệu ở sáu quốc gia. Chúng tôi vẫn giữ một đội ngũ nhỏ, vì tin rằng những
+            quyết định tốt nhất được sinh ra khi mọi người thực sự ngồi cùng một bàn.
+          </p>
+          <a class="link-arrow reveal" href="work.html">
+            Xem những dự án đã làm
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="studio-visual reveal" aria-hidden="true">
+          <span class="studio-visual__grid"></span>
+          <span class="studio-visual__ring"></span>
+          <span class="studio-visual__ring studio-visual__ring--2"></span>
+          <span class="studio-visual__core"></span>
+          <div class="studio-visual__label">
+            <strong>Universe Studio</strong>
+            <span>Hoàn Kiếm · Hà Nội</span>
+          </div>
+          <span class="studio-visual__coords">N 21°01′28″<br>E 105°51′15″</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values --------------------------------------------------------------->
+    <section class="section about-values">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow reveal">Nguyên tắc</span>
+            <h2 class="reveal">Bốn điều chúng tôi<br>không thương lượng.</h2>
+          </div>
+          <div class="section-head__aside reveal">
+            <p>
+              Chúng không phải khẩu hiệu treo tường. Chúng là những câu hỏi chúng tôi
+              tự hỏi trước mỗi quyết định thiết kế.
+            </p>
+          </div>
+        </div>
+
+        <div class="values-grid">
+          <article class="value-card reveal">
+            <span class="value-card__num">01</span>
+            <h3>Tò mò có chủ đích</h3>
+            <p>Câu hỏi đúng quan trọng hơn câu trả lời nhanh. Chúng tôi dành thời gian để hiểu trước khi thiết kế.</p>
+          </article>
+          <article class="value-card reveal" style="--reveal-delay: 80ms">
+            <span class="value-card__num">02</span>
+            <h3>Rõ ràng trước khi đẹp</h3>
+            <p>Nếu người chơi không hiểu mình đang làm gì, mọi lớp trang trí đều vô nghĩa.</p>
+          </article>
+          <article class="value-card reveal">
+            <span class="value-card__num">03</span>
+            <h3>Thiết kế để chơi</h3>
+            <p>Mọi quyết định đều được kiểm chứng bằng prototype và playtest, không bằng cảm tính.</p>
+          </article>
+          <article class="value-card reveal" style="--reveal-delay: 80ms">
+            <span class="value-card__num">04</span>
+            <h3>Bàn giao là bắt đầu</h3>
+            <p>Chúng tôi trao lại hệ thống, tài liệu và sự tự tin để đội ngũ của bạn tiếp tục bước tiếp.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline ------------------------------------------------------------->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow reveal">Dấu mốc</span>
+            <h2 class="reveal">Bảy năm,<br>vài bước ngoặt.</h2>
+          </div>
+          <div class="section-head__aside reveal">
+            <p>Không có bước ngoặt nào đến từ may mắn. Chúng đến từ những buổi playtest dài và một vài quyết định khó.</p>
+          </div>
+        </div>
+
+        <ol class="timeline">
+          <li class="timeline__item reveal">
+            <span class="timeline__year">2019</span>
+            <h3>Những ngày đầu</h3>
+            <p>Ba người, một căn hộ và dự án game đầu tiên.</p>
+          </li>
+          <li class="timeline__item reveal">
+            <span class="timeline__year">2021</span>
+            <h3>Ra mắt quốc tế</h3>
+            <p>Tựa game giải đố đầu tiên lọt top 10 App Store Việt Nam.</p>
+          </li>
+          <li class="timeline__item reveal">
+            <span class="timeline__year">2023</span>
+            <h3>Mở rộng studio</h3>
+            <p>Đội ngũ art direction và research chính thức gia nhập.</p>
+          </li>
+          <li class="timeline__item reveal">
+            <span class="timeline__year">2024</span>
+            <h3>Giải thưởng đầu tiên</h3>
+            <p>Nhận giải Thiết kế trải nghiệm tại Vietnam Game Awards.</p>
+          </li>
+          <li class="timeline__item reveal">
+            <span class="timeline__year">2025</span>
+            <h3>Universe Labs</h3>
+            <p>Thành lập nhóm R&amp;D cho prototype và công cụ thiết kế nội bộ.</p>
+          </li>
+          <li class="timeline__item reveal">
+            <span class="timeline__year">2026</span>
+            <h3>Hôm nay</h3>
+            <p>12 người, 6 quốc gia và vẫn đang tò mò về điều tiếp theo.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Team ----------------------------------------------------------------->
+    <section class="section about-team">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow reveal">Đội ngũ</span>
+            <h2 class="reveal">Những người<br>tạo nên vũ trụ.</h2>
+          </div>
+          <div class="section-head__aside reveal">
+            <p>
+              Nhỏ, đa ngành và đủ kỹ tính để tranh luận về một khoảng cách 4px
+              trong lúc vẫn kịp giao dự án.
+            </p>
+            <a class="link-arrow" href="contact.html">
+              Làm việc cùng chúng tôi
+              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="team-grid">
+          <article class="team-card reveal" style="--a: #8b5cf6; --b: #22d3ee">
+            <span class="team-card__index">01</span>
+            <span class="team-card__avatar" aria-hidden="true">MQ</span>
+            <div>
+              <h3>Minh Quân</h3>
+              <p>Founder &amp; Design Director</p>
+            </div>
+          </article>
+          <article class="team-card reveal" style="--a: #f472b6; --b: #fb923c; --reveal-delay: 60ms">
+            <span class="team-card__index">02</span>
+            <span class="team-card__avatar" aria-hidden="true">TV</span>
+            <div>
+              <h3>Thảo Vy</h3>
+              <p>Game Design Lead</p>
+            </div>
+          </article>
+          <article class="team-card reveal" style="--a: #22d3ee; --b: #d9f99d; --reveal-delay: 120ms">
+            <span class="team-card__index">03</span>
+            <span class="team-card__avatar" aria-hidden="true">ĐH</span>
+            <div>
+              <h3>Đức Huy</h3>
+              <p>Tech &amp; Prototyping</p>
+            </div>
+          </article>
+          <article class="team-card reveal" style="--a: #a78bfa; --b: #f472b6">
+            <span class="team-card__index">04</span>
+            <span class="team-card__avatar" aria-hidden="true">ML</span>
+            <div>
+              <h3>Mai Linh</h3>
+              <p>Product Design Lead</p>
+            </div>
+          </article>
+          <article class="team-card reveal" style="--a: #fb923c; --b: #facc15; --reveal-delay: 60ms">
+            <span class="team-card__index">05</span>
+            <span class="team-card__avatar" aria-hidden="true">HN</span>
+            <div>
+              <h3>Hoàng Nam</h3>
+              <p>Art Director</p>
+            </div>
+          </article>
+          <article class="team-card reveal" style="--a: #34d399; --b: #22d3ee; --reveal-delay: 120ms">
+            <span class="team-card__index">06</span>
+            <span class="team-card__avatar" aria-hidden="true">AN</span>
+            <div>
+              <h3>An Nhiên</h3>
+              <p>Research &amp; Strategy</p>
+            </div>
+          </article>
+
+          <a class="team-card team-card--join reveal" href="contact.html">
+            <span class="team-card__index">07</span>
+            <span class="team-card__plus" aria-hidden="true">+</span>
+            <div>
+              <h3>Bạn?</h3>
+              <p>Chúng tôi luôn tìm kiếm những người tò mò và kỹ tính.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Awards --------------------------------------------------------------->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow reveal">Ghi nhận</span>
+            <h2 class="reveal">Một vài dấu mốc.</h2>
+          </div>
+          <div class="section-head__aside reveal">
+            <p>Được ghi nhận là niềm vui. Được người chơi nhớ đến là phần thưởng lớn hơn.</p>
+          </div>
+        </div>
+
+        <ul class="awards-list">
+          <li class="award reveal">
+            <span class="award__year">2025</span>
+            <span class="award__title">Site of the Day</span>
+            <span class="award__org">Awwwards</span>
+          </li>
+          <li class="award reveal">
+            <span class="award__year">2024</span>
+            <span class="award__title">Best UX Design</span>
+            <span class="award__org">Vietnam Game Awards</span>
+          </li>
+          <li class="award reveal">
+            <span class="award__year">2024</span>
+            <span class="award__title">Featured Studio</span>
+            <span class="award__org">Behance</span>
+          </li>
+          <li class="award reveal">
+            <span class="award__year">2023</span>
+            <span class="award__title">Gold — Interactive Design</span>
+            <span class="award__org">Indigo Design Award</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CTA ------------------------------------------------------------------>
+    <section class="section">
+      <div class="container">
+        <div class="cta-panel reveal">
+          <span class="eyebrow">Next universe</span>
+          <h2>Chương tiếp theo có thể là của bạn.</h2>
+          <p>
+            Dù bạn đang bắt đầu từ một ý tưởng mơ hồ hay cần một đội ngũ thiết kế
+            đi cùng đến ngày ra mắt, chúng tôi rất muốn nghe.
+          </p>
+          <div class="cta-panel__actions">
+            <a class="btn btn--dark btn--lg" href="contact.html">
+              Kể cho chúng tôi nghe
+              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="btn btn--ghost btn--lg" href="work.html">Xem dự án</a>
+          </div>
+          <span class="cta-panel__orbit" aria-hidden="true"></span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a class="brand" href="index.html" aria-label="Universe — về trang chủ">
+            <span class="brand__mark" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none">
+                <circle cx="16" cy="16" r="5.8" stroke="currentColor" stroke-width="1.3"/>
+                <ellipse cx="16" cy="16" rx="13.6" ry="5.6" stroke="currentColor" stroke-width="1" opacity=".55" transform="rotate(-30 16 16)"/>
+                <circle cx="16" cy="16" r="1.7" fill="currentColor"/>
+                <circle cx="27.1" cy="8.2" r="1.3" fill="#22d3ee"/>
+              </svg>
+            </span>
+            <span class="brand__name">universe</span>
+          </a>
+          <p>
+            Một studio thiết kế độc lập, tạo ra những trải nghiệm game và sản phẩm số
+            có chiều sâu.
+          </p>
+          <a class="footer__email" href="mailto:hello@universe.studio">hello@universe.studio</a>
+        </div>
+
+        <nav class="footer__nav" aria-label="Liên kết chân trang">
+          <div class="footer__col">
+            <p class="footer__heading">Studio</p>
+            <ul>
+              <li><a href="about.html">Giới thiệu</a></li>
+              <li><a href="work.html">Dự án</a></li>
+              <li><a href="services.html">Dịch vụ</a></li>
+              <li><a href="contact.html">Liên hệ</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <p class="footer__heading">Kết nối</p>
+            <ul>
+              <li><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+              <li><a href="https://www.behance.net" target="_blank" rel="noopener noreferrer">Behance <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+              <li><a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <p class="footer__heading">Ghé thăm</p>
+            <address>Tầng 4, 18 Tống Duy Tân<br>Hoàn Kiếm, Hà Nội</address>
+            <p class="mono">Thứ 2 — Thứ 6<br>09:00 — 18:00</p>
+          </div>
+        </nav>
+      </div>
+
+      <div class="footer__word" aria-hidden="true"><span>universe</span></div>
+
+      <div class="footer__bottom">
+        <span>© <span data-year>2026</span> Universe Studio</span>
+        <span>Made with curiosity in Hà Nội</span>
+        <button class="footer__to-top" type="button" data-to-top>
+          Về đầu trang
+          <span aria-hidden="true">↑</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

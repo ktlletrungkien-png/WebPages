@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Liên hệ — Universe Studio</title>
+  <meta name="description" content="Bắt đầu một vũ trụ mới cùng Universe Studio. Kể cho chúng tôi về dự án game, sản phẩm số hoặc thương hiệu của bạn.">
+  <meta name="theme-color" content="#06060d">
+  <meta property="og:title" content="Liên hệ — Universe Studio">
+  <meta property="og:description" content="Cùng tạo nên vũ trụ tiếp theo. Chúng tôi phản hồi trong vòng hai ngày làm việc.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="vi_VN">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body data-page="contact" class="contact-page">
+  <a class="skip-link" href="#main">Bỏ qua nội dung</a>
+
+  <div class="aura" aria-hidden="true">
+    <span class="aura__glow aura__glow--violet"></span>
+    <span class="aura__glow aura__glow--cyan"></span>
+    <span class="aura__glow aura__glow--pink"></span>
+  </div>
+  <canvas id="starfield" class="starfield" aria-hidden="true"></canvas>
+  <div class="noise" aria-hidden="true"></div>
+
+  <div class="page-transition" aria-hidden="true">
+    <div class="page-transition__inner">
+      <span class="page-transition__mark">universe</span>
+      <span class="page-transition__bar"><span></span></span>
+    </div>
+  </div>
+
+  <header class="site-header" data-header>
+    <div class="container header__inner">
+      <a class="brand" href="index.html" aria-label="Universe — về trang chủ">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="16" r="5.8" stroke="currentColor" stroke-width="1.3"/>
+            <ellipse cx="16" cy="16" rx="13.6" ry="5.6" stroke="currentColor" stroke-width="1" opacity=".55" transform="rotate(-30 16 16)"/>
+            <circle cx="16" cy="16" r="1.7" fill="currentColor"/>
+            <circle cx="27.1" cy="8.2" r="1.3" fill="#22d3ee"/>
+          </svg>
+        </span>
+        <span class="brand__name">universe</span>
+      </a>
+
+      <nav class="nav" id="site-nav" aria-label="Điều hướng chính">
+        <ul class="nav__list">
+          <li><a class="nav__link" data-nav="home" href="index.html">Trang chủ</a></li>
+          <li><a class="nav__link" data-nav="about" href="about.html">Giới thiệu</a></li>
+          <li><a class="nav__link" data-nav="work" href="work.html">Dự án</a></li>
+          <li><a class="nav__link" data-nav="services" href="services.html">Dịch vụ</a></li>
+          <li><a class="nav__link" data-nav="contact" href="contact.html">Liên hệ</a></li>
+        </ul>
+        <div class="nav__footer">
+          <a class="btn btn--gradient" href="contact.html">
+            Bắt đầu dự án
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="nav__contact">
+            <span>Email</span>
+            <a href="mailto:hello@universe.studio">hello@universe.studio</a>
+          </div>
+          <div class="nav__socials">
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://www.behance.net" target="_blank" rel="noopener noreferrer">Behance</a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+        </div>
+      </nav>
+
+      <a class="header__cta btn btn--sm btn--ghost" href="mailto:hello@universe.studio">
+        Gửi email
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Mở menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main" class="site-main">
+    <!-- Page hero ------------------------------------------------------------>
+    <section class="page-hero">
+      <span class="page-hero__index" aria-hidden="true">04</span>
+      <div class="container">
+        <div class="page-hero__top">
+          <span class="eyebrow reveal">Liên hệ</span>
+          <span class="page-hero__meta">Phản hồi trong 2 ngày làm việc</span>
+        </div>
+        <h1 class="page-hero__title reveal">Cùng tạo nên <span class="gradient-text">vũ trụ</span> tiếp theo.</h1>
+        <div class="page-hero__bottom">
+          <p class="page-hero__lead reveal">
+            Bạn đang có một ý tưởng, một bản build cần cứu, hay chỉ là một cảm giác mơ hồ
+            rằng trải nghiệm này có thể tốt hơn? Hãy bắt đầu từ đó.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -------------------------------------------------------------->
+    <section class="section">
+      <div class="container contact-grid">
+        <aside class="contact-aside reveal">
+          <p class="contact-intro">
+            Chúng tôi nhận một số lượng dự án giới hạn mỗi quý để dành đủ thời gian cho
+            từng thế giới. Nếu dự án của bạn phù hợp, bạn sẽ nhận được phản hồi cá nhân
+            — không phải email tự động.
+          </p>
+
+          <div class="contact-status">
+            <span class="status"><span class="status__dot"></span>Đang nhận dự án Q1/2027</span>
+            <p>Còn 2 suất cho quý này. Ưu tiên các dự án có mục tiêu rõ ràng và sẵn sàng playtest.</p>
+          </div>
+
+          <div class="contact-detail">
+            <span class="contact-detail__label">Email</span>
+            <div class="contact-email-row">
+              <a href="mailto:hello@universe.studio">hello@universe.studio</a>
+              <button class="copy-btn" type="button" data-copy-email="hello@universe.studio">Sao chép</button>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <span class="contact-detail__label">Điện thoại</span>
+            <a href="tel:+842473002019">+84 24 7300 2019</a>
+          </div>
+
+          <div class="contact-detail">
+            <span class="contact-detail__label">Studio</span>
+            <p>Tầng 4, 18 Tống Duy Tân<br>Hoàn Kiếm, Hà Nội, Việt Nam</p>
+          </div>
+
+          <div class="contact-detail">
+            <span class="contact-detail__label">Theo dõi</span>
+            <div class="contact-socials">
+              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+              <a href="https://www.behance.net" target="_blank" rel="noopener noreferrer">Behance <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+          </div>
+        </aside>
+
+        <div class="contact-form-panel reveal">
+          <form class="contact-form" data-contact-form novalidate>
+            <div class="form-grid">
+              <div class="form-row">
+                <div class="field" data-field>
+                  <label for="name">Họ và tên <span aria-hidden="true">*</span></label>
+                  <input id="name" name="name" type="text" autocomplete="name" placeholder="Nguyễn Minh Anh" required aria-describedby="name-error">
+                  <span class="field__error" id="name-error"></span>
+                </div>
+                <div class="field" data-field>
+                  <label for="email">Email <span aria-hidden="true">*</span></label>
+                  <input id="email" name="email" type="email" autocomplete="email" placeholder="ban@congty.com" required aria-describedby="email-error">
+                  <span class="field__error" id="email-error"></span>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="field" data-field>
+                  <label for="company">Công ty / studio</label>
+                  <input id="company" name="company" type="text" autocomplete="organization" placeholder="Tên đội ngũ của bạn">
+                  <span class="field__error" id="company-error"></span>
+                </div>
+                <div class="field" data-field>
+                  <label for="project">Loại dự án <span aria-hidden="true">*</span></label>
+                  <select id="project" name="project" required aria-describedby="project-error">
+                    <option value="">Chọn loại dự án</option>
+                    <option value="game">Game design / phát triển game</option>
+                    <option value="product">Sản phẩm số / UX-UI</option>
+                    <option value="brand">Thương hiệu / art direction</option>
+                    <option value="prototype">Prototype / playtest</option>
+                    <option value="other">Một điều gì đó khác</option>
+                  </select>
+                  <span class="field__error" id="project-error"></span>
+                </div>
+              </div>
+
+              <div class="field" data-field>
+                <label for="budget">Ngân sách dự kiến</label>
+                <select id="budget" name="budget">
+                  <option value="">Chưa xác định</option>
+                  <option value="under-200">Dưới 200 triệu VND</option>
+                  <option value="200-500">200 – 500 triệu VND</option>
+                  <option value="500-1000">500 triệu – 1 tỷ VND</option>
+                  <option value="above-1000">Trên 1 tỷ VND</option>
+                </select>
+                <span class="field__error" id="budget-error"></span>
+              </div>
+
+              <div class="field" data-field>
+                <label for="message">Về dự án của bạn <span aria-hidden="true">*</span></label>
+                <textarea id="message" name="message" rows="5" maxlength="1200" placeholder="Chúng tôi đang xây một tựa game mobile về…" required aria-describedby="message-error"></textarea>
+                <span class="field__error" id="message-error"></span>
+              </div>
+            </div>
+
+            <div class="form-foot">
+              <p>
+                Bản demo frontend — dữ liệu không được gửi lên máy chủ.
+                Bằng cách gửi, bạn cho phép Universe liên hệ về yêu cầu này.
+              </p>
+              <button class="btn btn--gradient btn--lg" type="submit">
+                Gửi yêu cầu
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+          </form>
+
+          <div class="form-success" data-form-success role="status" aria-live="polite">
+            <span class="form-success__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M5 12.5 10 17.5 19 7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <h3 tabindex="-1">Đã nhận yêu cầu của bạn.</h3>
+            <p>
+              Cảm ơn <span data-success-name> bạn</span>. Vì đây là bản demo frontend,
+              dữ liệu chưa được gửi đi đâu cả. Trong phiên bản thật, chúng tôi sẽ phản hồi
+              qua email trong vòng hai ngày làm việc.
+            </p>
+            <button class="btn btn--ghost" type="button" data-form-reset>Gửi yêu cầu khác</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" data-toast role="status" aria-live="polite"></div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a class="brand" href="index.html" aria-label="Universe — về trang chủ">
+            <span class="brand__mark" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none">
+                <circle cx="16" cy="16" r="5.8" stroke="currentColor" stroke-width="1.3"/>
+                <ellipse cx="16" cy="16" rx="13.6" ry="5.6" stroke="currentColor" stroke-width="1" opacity=".55" transform="rotate(-30 16 16)"/>
+                <circle cx="16" cy="16" r="1.7" fill="currentColor"/>
+                <circle cx="27.1" cy="8.2" r="1.3" fill="#22d3ee"/>
+              </svg>
+            </span>
+            <span class="brand__name">universe</span>
+          </a>
+          <p>
+            Một studio thiết kế độc lập, tạo ra những trải nghiệm game và sản phẩm số
+            có chiều sâu.
+          </p>
+          <a class="footer__email" href="mailto:hello@universe.studio">hello@universe.studio</a>
+        </div>
+
+        <nav class="footer__nav" aria-label="Liên kết chân trang">
+          <div class="footer__col">
+            <p class="footer__heading">Studio</p>
+            <ul>
+              <li><a href="about.html">Giới thiệu</a></li>
+              <li><a href="work.html">Dự án</a></li>
+              <li><a href="services.html">Dịch vụ</a></li>
+              <li><a href="contact.html">Liên hệ</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <p class="footer__heading">Kết nối</p>
+            <ul>
+              <li><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+              <li><a href="https://www.behance.net" target="_blank" rel="noopener noreferrer">Behance <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+              <li><a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <p class="footer__heading">Ghé thăm</p>
+            <address>Tầng 4, 18 Tống Duy Tân<br>Hoàn Kiếm, Hà Nội</address>
+            <p class="mono">Thứ 2 — Thứ 6<br>09:00 — 18:00</p>
+          </div>
+        </nav>
+      </div>
+
+      <div class="footer__word" aria-hidden="true"><span>universe</span></div>
+
+      <div class="footer__bottom">
+        <span>© <span data-year>2026</span> Universe Studio</span>
+        <span>Made with curiosity in Hà Nội</span>
+        <button class="footer__to-top" type="button" data-to-top>
+          Về đầu trang
+          <span aria-hidden="true">↑</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/contact.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dự án — Universe Studio</title>
+  <meta name="description" content="Khám phá các case study game design, product design và brand identity do Universe Studio thực hiện từ 2023 đến 2026.">
+  <meta name="theme-color" content="#06060d">
+  <meta property="og:title" content="Dự án — Universe Studio">
+  <meta property="og:description" content="Những thế giới chúng tôi đã tạo ra: game, sản phẩm số và thương hiệu.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="vi_VN">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body data-page="work">
+  <a class="skip-link" href="#main">Bỏ qua nội dung</a>
+
+  <div class="aura" aria-hidden="true">
+    <span class="aura__glow aura__glow--violet"></span>
+    <span class="aura__glow aura__glow--cyan"></span>
+    <span class="aura__glow aura__glow--pink"></span>
+  </div>
+  <canvas id="starfield" class="starfield" aria-hidden="true"></canvas>
+  <div class="noise" aria-hidden="true"></div>
+
+  <div class="page-transition" aria-hidden="true">
+    <div class="page-transition__inner">
+      <span class="page-transition__mark">universe</span>
+      <span class="page-transition__bar"><span></span></span>
+    </div>
+  </div>
+
+  <header class="site-header" data-header>
+    <div class="container header__inner">
+      <a class="brand" href="index.html" aria-label="Universe — về trang chủ">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="16" r="5.8" stroke="currentColor" stroke-width="1.3"/>
+            <ellipse cx="16" cy="16" rx="13.6" ry="5.6" stroke="currentColor" stroke-width="1" opacity=".55" transform="rotate(-30 16 16)"/>
+            <circle cx="16" cy="16" r="1.7" fill="currentColor"/>
+            <circle cx="27.1" cy="8.2" r="1.3" fill="#22d3ee"/>
+          </svg>
+        </span>
+        <span class="brand__name">universe</span>
+      </a>
+
+      <nav class="nav" id="site-nav" aria-label="Điều hướng chính">
+        <ul class="nav__list">
+          <li><a class="nav__link" data-nav="home" href="index.html">Trang chủ</a></li>
+          <li><a class="nav__link" data-nav="about" href="about.html">Giới thiệu</a></li>
+          <li><a class="nav__link" data-nav="work" href="work.html">Dự án</a></li>
+          <li><a class="nav__link" data-nav="services" href="services.html">Dịch vụ</a></li>
+          <li><a class="nav__link" data-nav="contact" href="contact.html">Liên hệ</a></li>
+        </ul>
+        <div class="nav__footer">
+          <a class="btn btn--gradient" href="contact.html">
+            Bắt đầu dự án
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="nav__contact">
+            <span>Email</span>
+            <a href="mailto:hello@universe.studio">hello@universe.studio</a>
+          </div>
+          <div class="nav__socials">
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://www.behance.net" target="_blank" rel="noopener noreferrer">Behance</a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+        </div>
+      </nav>
+
+      <a class="header__cta btn btn--sm btn--ghost" href="contact.html">
+        Bắt đầu dự án
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Mở menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main" class="site-main">
+    <!-- Page hero ------------------------------------------------------------>
+    <section class="page-hero">
+      <span class="page-hero__index" aria-hidden="true">02</span>
+      <div class="container">
+        <div class="page-hero__top">
+          <span class="eyebrow reveal">Dự án</span>
+          <span class="page-hero__meta">Case studies — 2023 / 2026</span>
+        </div>
+        <h1 class="page-hero__title reveal">Những thế giới chúng tôi đã <span class="gradient-text">tạo ra</span>.</h1>
+        <div class="page-hero__bottom">
+          <p class="page-hero__lead reveal">
+            Mỗi case study dưới đây là một cách khác nhau để trả lời cùng một câu hỏi:
+            làm thế nào để người dùng, người chơi hoặc khách hàng cảm thấy mình thuộc về
+            nơi này?
+          </p>
+          <div class="page-hero__stats reveal">
+            <div class="page-hero__stat">
+              <strong>48</strong>
+              <span>Dự án đã ship</span>
+            </div>
+            <div class="page-hero__stat">
+              <strong>06</strong>
+              <span>Case study chọn lọc</span>
+            </div>
+            <div class="page-hero__stat">
+              <strong>03</strong>
+              <span>Lĩnh vực chính</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Archive -------------------------------------------------------------->
+    <section class="section work-archive">
+      <div class="container">
+        <div class="filter-bar reveal">
+          <div class="filters" role="group" aria-label="Lọc dự án theo lĩnh vực">
+            <button class="filter" type="button" data-filter="all" aria-pressed="true">Tất cả</button>
+            <button class="filter" type="button" data-filter="game" aria-pressed="false">Game</button>
+            <button class="filter" type="button" data-filter="product" aria-pressed="false">Sản phẩm</button>
+            <button class="filter" type="button" data-filter="brand" aria-pressed="false">Thương hiệu</button>
+          </div>
+          <span class="filter-status" data-filter-status aria-live="polite">06 dự án</span>
+        </div>
+
+        <div class="work-grid">
+          <article class="work-card reveal" data-category="game">
+            <a class="work-card__hit" href="#orbital-drift" data-project="orbital-drift" aria-label="Xem case study Orbital Drift"></a>
+            <div class="work-card__media">
+              <img src="assets/img/work-orbital.svg" alt="" width="1000" height="750" loading="lazy">
+              <span class="work-card__badge">Case 01</span>
+              <span class="work-card__view">
+                Xem case study
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+            <div class="work-card__body">
+              <div>
+                <h3>Orbital Drift</h3>
+                <p>Game Design · UI/UX</p>
+              </div>
+              <span class="work-card__year">2026</span>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="product" style="--reveal-delay: 60ms">
+            <a class="work-card__hit" href="#nebula-os" data-project="nebula-os" aria-label="Xem case study Nebula OS"></a>
+            <div class="work-card__media">
+              <img src="assets/img/work-nebula.svg" alt="" width="1000" height="750" loading="lazy">
+              <span class="work-card__badge">Case 02</span>
+              <span class="work-card__view">
+                Xem case study
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+            <div class="work-card__body">
+              <div>
+                <h3>Nebula OS</h3>
+                <p>Product Design · Design System</p>
+              </div>
+              <span class="work-card__year">2025</span>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="brand" style="--reveal-delay: 120ms">
+            <a class="work-card__hit" href="#signal-noise" data-project="signal-noise" aria-label="Xem case study Signal/Noise"></a>
+            <div class="work-card__media">
+              <img src="assets/img/work-signal.svg" alt="" width="1000" height="750" loading="lazy">
+              <span class="work-card__badge">Case 03</span>
+              <span class="work-card__view">
+                Xem case study
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+            <div class="work-card__body">
+              <div>
+                <h3>Signal/Noise</h3>
+                <p>Brand Identity · Art Direction</p>
+              </div>
+              <span class="work-card__year">2025</span>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="game">
+            <a class="work-card__hit" href="#echoes-of-io" data-project="echoes-of-io" aria-label="Xem case study Echoes of Io"></a>
+            <div class="work-card__media">
+              <img src="assets/img/work-echo.svg" alt="" width="1000" height="750" loading="lazy">
+              <span class="work-card__badge">Case 04</span>
+              <span class="work-card__view">
+                Xem case study
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+            <div class="work-card__body">
+              <div>
+                <h3>Echoes of Io</h3>
+                <p>Worldbuilding · Narrative</p>
+              </div>
+              <span class="work-card__year">2024</span>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="product" style="--reveal-delay: 60ms">
+            <a class="work-card__hit" href="#tidal" data-project="tidal" aria-label="Xem case study Tidal"></a>
+            <div class="work-card__media">
+              <img src="assets/img/work-tidal.svg" alt="" width="1000" height="750" loading="lazy">
+              <span class="work-card__badge">Case 05</span>
+              <span class="work-card__view">
+                Xem case study
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+            <div class="work-card__body">
+              <div>
+                <h3>Tidal</h3>
+                <p>Product Design · UX Research</p>
+              </div>
+              <span class="work-card__year">2024</span>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="brand" style="--reveal-delay: 120ms">
+            <a class="work-card__hit" href="#atlas-of-small-things" data-project="atlas-of-small-things" aria-label="Xem case study Atlas of Small Things"></a>
+            <div class="work-card__media">
+              <img src="assets/img/work-atlas.svg" alt="" width="1000" height="750" loading="lazy">
+              <span class="work-card__badge">Case 06</span>
+              <span class="work-card__view">
+                Xem case study
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+            <div class="work-card__body">
+              <div>
+                <h3>Atlas of Small Things</h3>
+                <p>Editorial Design · Web</p>
+              </div>
+              <span class="work-card__year">2023</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA ------------------------------------------------------------------>
+    <section class="section">
+      <div class="container">
+        <div class="cta-panel reveal">
+          <span class="eyebrow">Your project</span>
+          <h2>Dự án tiếp theo có thể là thứ chúng tôi tự hào nhất.</h2>
+          <p>
+            Chúng tôi nhận một số lượng dự án giới hạn mỗi quý để dành đủ thời gian
+            cho từng thế giới. Hãy kể cho chúng tôi nghe bạn đang xây gì.
+          </p>
+          <div class="cta-panel__actions">
+            <a class="btn btn--dark btn--lg" href="contact.html">
+              Bắt đầu dự án
+              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="btn btn--ghost btn--lg" href="services.html">Xem dịch vụ</a>
+          </div>
+          <span class="cta-panel__orbit" aria-hidden="true"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project dialog ------------------------------------------------------->
+    <dialog class="project-dialog" id="project-dialog" aria-labelledby="project-dialog-title">
+      <button class="project-dialog__close" type="button" data-dialog-close aria-label="Đóng chi tiết dự án">
+        <svg viewBox="0 0 16 16" fill="none" width="15" height="15" aria-hidden="true">
+          <path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="project-dialog__scroll">
+        <div class="project-dialog__media">
+          <img data-detail-image alt="" width="1000" height="750">
+        </div>
+        <div class="project-dialog__body">
+          <span class="eyebrow" data-detail-category></span>
+          <h2 id="project-dialog-title" data-detail-title></h2>
+          <p class="project-dialog__summary" data-detail-summary></p>
+
+          <dl class="project-dialog__meta">
+            <div>
+              <dt>Khách hàng</dt>
+              <dd data-detail-client></dd>
+            </div>
+            <div>
+              <dt>Vai trò</dt>
+              <dd data-detail-role></dd>
+            </div>
+            <div>
+              <dt>Năm</dt>
+              <dd data-detail-year></dd>
+            </div>
+            <div>
+              <dt>Lĩnh vực</dt>
+              <dd data-detail-field></dd>
+            </div>
+          </dl>
+
+          <div class="detail-block">
+            <h4>Thử thách</h4>
+            <p data-detail-challenge></p>
+          </div>
+          <div class="detail-block">
+            <h4>Cách tiếp cận</h4>
+            <p data-detail-approach></p>
+          </div>
+          <div class="detail-block">
+            <h4>Kết quả</h4>
+            <p data-detail-outcome></p>
+          </div>
+
+          <div class="detail-metrics" data-detail-metrics></div>
+
+          <div class="project-dialog__actions">
+            <a class="btn btn--gradient" href="contact.html">
+              Bắt đầu dự án tương tự
+              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <button class="btn btn--ghost" type="button" data-dialog-close>Đóng</button>
+          </div>
+        </div>
+      </div>
+    </dialog>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a class="brand" href="index.html" aria-label="Universe — về trang chủ">
+            <span class="brand__mark" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none">
+                <circle cx="16" cy="16" r="5.8" stroke="currentColor" stroke-width="1.3"/>
+                <ellipse cx="16" cy="16" rx="13.6" ry="5.6" stroke="currentColor" stroke-width="1" opacity=".55" transform="rotate(-30 16 16)"/>
+                <circle cx="16" cy="16" r="1.7" fill="currentColor"/>
+                <circle cx="27.1" cy="8.2" r="1.3" fill="#22d3ee"/>
+              </svg>
+            </span>
+            <span class="brand__name">universe</span>
+          </a>
+          <p>
+            Một studio thiết kế độc lập, tạo ra những trải nghiệm game và sản phẩm số
+            có chiều sâu.
+          </p>
+          <a class="footer__email" href="mailto:hello@universe.studio">hello@universe.studio</a>
+        </div>
+
+        <nav class="footer__nav" aria-label="Liên kết chân trang">
+          <div class="footer__col">
+            <p class="footer__heading">Studio</p>
+            <ul>
+              <li><a href="about.html">Giới thiệu</a></li>
+              <li><a href="work.html">Dự án</a></li>
+              <li><a href="services.html">Dịch vụ</a></li>
+              <li><a href="contact.html">Liên hệ</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <p class="footer__heading">Kết nối</p>
+            <ul>
+              <li><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+              <li><a href="https://www.behance.net" target="_blank" rel="noopener noreferrer">Behance <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+              <li><a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <p class="footer__heading">Ghé thăm</p>
+            <address>Tầng 4, 18 Tống Duy Tân<br>Hoàn Kiếm, Hà Nội</address>
+            <p class="mono">Thứ 2 — Thứ 6<br>09:00 — 18:00</p>
+          </div>
+        </nav>
+      </div>
+
+      <div class="footer__word" aria-hidden="true"><span>universe</span></div>
+
+      <div class="footer__bottom">
+        <span>© <span data-year>2026</span> Universe Studio</span>
+        <span>Made with curiosity in Hà Nội</span>
+        <button class="footer__to-top" type="button" data-to-top>
+          Về đầu trang
+          <span aria-hidden="true">↑</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/work.js" defer></script>
+</body>
+</html>
