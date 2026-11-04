@@ -1774,7 +1774,7 @@
   margin-top: 2rem;
 }
 
-.detail-block h4 {
+.detail-block h3 {
   color: var(--cyan-soft);
   font-family: var(--font-mono);
   font-size: 0.56rem;
@@ -2488,11 +2488,11 @@
   height: 22px;
 }
 
-.form-success h3 {
+.form-success h2 {
   font-size: 1.6rem;
 }
 
-.form-success h3:focus {
+.form-success h2:focus {
   outline: none;
 }
 

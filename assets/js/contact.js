@@ -56,7 +56,7 @@
       ? successPanel.querySelector("[data-form-reset]")
       : null;
     const successHeading = successPanel
-      ? successPanel.querySelector("h3")
+      ? successPanel.querySelector("h2")
       : null;
 
     const rules = {
