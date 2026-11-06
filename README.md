@@ -1,73 +1,95 @@
-# Universe Studio — Website giới thiệu
+# TERRA — Planetary Design & Earth Systems Studio
 
-Website nhiều trang cho một studio thiết kế / thiết kế game hư cấu tên **Universe**.
-Toàn bộ giao diện được xây dựng bằng HTML, CSS và JavaScript thuần, không dùng
-framework, build tool hay backend.
+> **Modern ReactJS Application** converted from static HTML/CSS/JS with an interactive **Planet Earth** theme, real-time 3D Earth Globe canvas, and full English localization.
 
-## Chạy website
+---
 
-Mở trực tiếp `index.html` bằng trình duyệt, hoặc chạy một HTTP server tĩnh:
+## 🌍 Overview
 
+**TERRA** is a futuristic planetary design and environmental technology studio website. It represents an agency that crafts geospatial digital twins, climate intelligence interfaces, and interactive 3D simulations for Earth observation and ecological conservation.
+
+- **Stack**: React 19, Vite, React Router DOM, Lucide Icons, Canvas Confetti.
+- **Theme**: **Planet Earth / Living Biosphere** — Deep oceanic navy, bioluminescent cyan, canopy emerald green, and atmospheric auroras.
+- **Language**: English (`lang: en`).
+- **Interactive Centerpiece**: Interactive HTML5 Canvas 3D Earth Globe with draggable rotation, satellite telemetry orbit, active station pins, and live coordinates HUD.
+
+---
+
+## 🚀 Quick Start
+
+Ensure you have **Node.js** (v18+) installed.
+
+### 1. Install dependencies
 ```bash
-python3 -m http.server 8123
+npm install
 ```
 
-Sau đó truy cập <http://localhost:8123>.
+### 2. Start development server
+```bash
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-Nên chạy qua HTTP server để kiểm tra đầy đủ chuyển trang, hash và clipboard.
+### 3. Build for production
+```bash
+npm run build
+```
+The compiled, production-ready static bundle will be generated in `dist/`.
 
-## Các trang
+### 4. Preview production build
+```bash
+npm run preview
+```
 
-| Trang | Nội dung |
-| --- | --- |
-| `index.html` | Hero, giới thiệu nhanh, dự án chọn lọc, dịch vụ, quy trình, CTA |
-| `about.html` | Câu chuyện studio, giá trị, timeline, đội ngũ, giải thưởng |
-| `work.html` | Bộ lọc dự án, 6 case study, modal chi tiết |
-| `services.html` | Các nhóm dịch vụ, năng lực, quy trình, gói hợp tác, FAQ |
-| `contact.html` | Thông tin liên hệ, form demo, trạng thái gửi thành công |
-| `404.html` | Trang lỗi “lạc vào một vũ trụ khác” |
+---
 
-## Cấu trúc thư mục
+## 🗺️ Pages & Features
+
+| Route | Page | Key Features |
+|---|---|---|
+| `/` | **Home** | Interactive 3D Earth Globe (drag-to-rotate, orbit satellite), Live Coordinates HUD, Marquee ticker, Studio Manifesto, Real-time Impact Metrics, Selected Missions, Disciplines, 4-Phase Workflow, Call to Action. |
+| `/about` | **About** | The Story of Terra, 4 Core Planetary Values (Biosphere-First, Open Science, Sensory Wonder, Regenerative Speed), Chronological Milestones (2019–2026), Global Fellows / Team, Climate & Design Laurels. |
+| `/work` | **Work / Missions** | Category filters (Climate Twins, Marine & Oceans, Conservation Tech, Planetary Games) with counts, 6 detailed case studies, Deep link support (`#terrapulse-3d`), interactive case study modal dialog. |
+| `/services` | **Services** | 4 Interactive expandable service accordions, Technical deliverables, Engineering tech stack matrix (WebGL, GLSL, Cesium, React 19), 3 Partnership tiers (Sprint, Flagship, Retainer), FAQ accordion. |
+| `/contact` | **Contact** | Direct frequency channels with one-click **Copy Email** & **Copy Coordinates** with animated toast, Global Observatory stations (London, Tokyo, Zurich, Manaus), Interactive transmission form with validation & confetti success state. |
+| `*` | **404** | "Lost in Deep Space / Out of Earth Orbit" error screen with telemetry lost badge and return to Earth Command CTA. |
+
+---
+
+## 🌐 Project Structure
 
 ```text
 .
-├── index.html
-├── about.html
-├── work.html
-├── services.html
-├── contact.html
-├── 404.html
-└── assets
-    ├── css
-    │   ├── base.css        # token, reset, typography, utility
-    │   ├── layout.css      # nền, header, nav, footer, page transition
-    │   ├── components.css  # hero, card, dialog, form, accordion, FAQ…
-    │   └── pages.css       # bố cục riêng từng trang và responsive
-    ├── js
-    │   ├── main.js         # nav, reveal, counter, starfield, transition
-    │   ├── work.js         # lọc dự án, modal, deep link case study
-    │   └── contact.js      # validate form, success state, copy email
-    └── img
-        ├── favicon.svg
-        └── work-*.svg      # artwork cho 6 dự án
+├── index.html                  # Vite entry HTML (Space Grotesk + Inter + JetBrains Mono)
+├── vite.config.js              # Vite React configuration
+├── package.json                # Project scripts & dependencies
+├── public/                     # Static assets (SVGs, favicon)
+│   └── assets/img/
+├── src/
+│   ├── main.jsx                # Application root mounting
+│   ├── App.jsx                 # Routing, layout & global background effects
+│   ├── components/
+│   │   ├── Header.jsx          # Sticky glassmorphic navigation with mobile drawer
+│   │   ├── Footer.jsx          # Studio telemetry, UTC clock, dispatch newsletter & links
+│   │   ├── EarthGlobe.jsx      # Interactive 3D Canvas Earth Globe (drag-to-rotate)
+│   │   ├── Starfield.jsx       # Dynamic twinkling starfield & shooting stars
+│   │   └── ProjectModal.jsx    # Case study dialog with next/prev navigation
+│   ├── pages/
+│   │   ├── HomePage.jsx
+│   │   ├── AboutPage.jsx
+│   │   ├── WorkPage.jsx
+│   │   ├── ServicesPage.jsx
+│   │   ├── ContactPage.jsx
+│   │   └── NotFoundPage.jsx
+│   ├── data/
+│   │   └── projectsData.js     # Planetary case studies, services, team & FAQs
+│   └── styles/
+│       └── index.css           # Earth theme design system & styling
+└── legacy-vanilla/             # Backup of the original pure HTML/CSS/JS files
 ```
 
-## Tương tác chính
+---
 
-- Điều hướng mobile dạng overlay, hỗ trợ đóng bằng `Esc`.
-- Chuyển trang bằng overlay nhẹ; tôn trọng `prefers-reduced-motion`.
-- Starfield vẽ bằng `<canvas>`, hero có parallax nhẹ trên thiết bị có chuột.
-- Dự án trên trang chủ deep-link tới `work.html#slug` và tự mở case study.
-- Bộ lọc dự án cập nhật số lượng và trạng thái `aria-pressed`.
-- Modal case study dùng thẻ `<dialog>` gốc của trình duyệt.
-- Accordion dịch vụ và FAQ dùng `<details>`; có thể mở trực tiếp bằng hash
-  (ví dụ `services.html#ux-ui`).
-- Form liên hệ validate phía client, hiển thị lỗi và trạng thái thành công.
+## 📦 Legacy Backup
 
-## Lưu ý
-
-- Đây là **frontend demo**. Form không gửi dữ liệu lên server.
-- Nội dung, khách hàng, dự án và giải thưởng đều là hư cấu.
-- Các liên kết mạng xã hội trỏ tới trang chủ của nền tảng tương ứng.
-- Màu sắc, font và khoảng cách có thể tùy chỉnh qua các CSS custom property
-  trong `assets/css/base.css`.
+The original vanilla HTML/CSS/JS files have been safely archived in the `legacy-vanilla/` folder for historical reference.

@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 750" role="img" aria-label="Tidal — những dải màu chuyển động và thẻ giao diện nổi">
+  <defs>
+    <linearGradient id="tid-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#130f2e"/>
+      <stop offset=".55" stop-color="#1b1550"/>
+      <stop offset="1" stop-color="#081220"/>
+    </linearGradient>
+    <linearGradient id="tid-wave1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f472b6" stop-opacity=".9"/>
+      <stop offset=".5" stop-color="#a78bfa" stop-opacity=".75"/>
+      <stop offset="1" stop-color="#22d3ee" stop-opacity=".8"/>
+    </linearGradient>
+    <linearGradient id="tid-wave2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#f472b6" stop-opacity=".35"/>
+    </linearGradient>
+    <radialGradient id="tid-sun" cx="40%" cy="35%" r="65%">
+      <stop offset="0" stop-color="#ffe4f1"/>
+      <stop offset=".4" stop-color="#f9a8d4"/>
+      <stop offset="1" stop-color="#db2777" stop-opacity=".15"/>
+    </radialGradient>
+    <filter id="tid-blur" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+    <filter id="tid-noise">
+      <feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="750" fill="url(#tid-bg)"/>
+  <circle cx="300" cy="228" r="150" fill="url(#tid-sun)" filter="url(#tid-blur)"/>
+  <circle cx="300" cy="228" r="84" fill="url(#tid-sun)"/>
+
+  <g filter="url(#tid-blur)" opacity=".85">
+    <path d="M-80 560c180-120 350 70 560-40s330-170 600-40v300H-80z" fill="url(#tid-wave1)" opacity=".55"/>
+    <path d="M-80 654c210-140 400 40 610-50s300-100 550 10v220H-80z" fill="url(#tid-wave2)"/>
+  </g>
+
+  <g fill="none" stroke-linecap="round">
+    <path d="M-40 540c170-110 330 60 540-30s340-150 560-30" stroke="#f9a8d4" stroke-width="1.4" opacity=".6"/>
+    <path d="M-40 574c180-110 340 56 550-34s330-140 550-20" stroke="#67e8f9" stroke-width="1" opacity=".45"/>
+    <path d="M-40 612c200-120 360 50 570-40s320-120 540-10" stroke="#c4b5fd" stroke-width="1" opacity=".3"/>
+  </g>
+
+  <g transform="translate(560 214) rotate(3 160 120)">
+    <rect width="330" height="250" rx="22" fill="#f8f6ff" stroke="#fff" stroke-opacity=".5"/>
+    <text x="28" y="42" font-family="'Be Vietnam Pro', sans-serif" font-size="11" fill="#6d6788" letter-spacing="1.5">TIDAL / WEEKLY</text>
+    <text x="28" y="86" font-family="'Space Grotesk', sans-serif" font-size="36" font-weight="600" fill="#141026" letter-spacing="-1">+24.8%</text>
+    <text x="28" y="108" font-family="'Be Vietnam Pro', sans-serif" font-size="10" fill="#6d6788">deep focus sessions</text>
+    <path d="M28 208c28-6 36-42 62-38s34 34 62 26 34-58 64-52 30 40 58 32 30-26 48-30" fill="none" stroke="#7c3aed" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M28 218c28-6 36-42 62-38s34 34 62 26 34-58 64-52 30 40 58 32 30-26 48-30" fill="none" stroke="#7c3aed" stroke-width="6" stroke-linecap="round" opacity=".1"/>
+    <g fill="#7c3aed">
+      <rect x="28" y="142" width="4" height="40" rx="2" opacity=".2"/>
+      <rect x="44" y="150" width="4" height="32" rx="2" opacity=".2"/>
+      <rect x="60" y="134" width="4" height="48" rx="2" opacity=".35"/>
+      <rect x="76" y="146" width="4" height="36" rx="2" opacity=".2"/>
+      <rect x="92" y="126" width="4" height="56" rx="2" opacity=".45"/>
+    </g>
+    <circle cx="290" cy="42" r="14" fill="#22d3ee" fill-opacity=".2"/>
+    <circle cx="290" cy="42" r="5" fill="#0891b2"/>
+  </g>
+
+  <g transform="translate(782 528)">
+    <rect width="152" height="64" rx="18" fill="#0b0b18" fill-opacity=".75" stroke="#fff" stroke-opacity=".18"/>
+    <circle cx="30" cy="32" r="12" fill="#f472b6" fill-opacity=".25"/>
+    <path d="M25 32l4 4 8-9" fill="none" stroke="#f9a8d4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="52" y="29" font-family="'Be Vietnam Pro', sans-serif" font-size="9" fill="#fff" opacity=".5">SYNCED</text>
+    <text x="52" y="45" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#fff" opacity=".9">12 devices</text>
+  </g>
+
+  <g fill="#efeaff" font-family="'Space Grotesk', 'Helvetica Neue', sans-serif">
+    <text x="64" y="84" font-size="11" letter-spacing="4" opacity=".55">UNIVERSE / CASE 05</text>
+    <text x="64" y="682" font-size="34" font-weight="600" letter-spacing="-.5">Tidal</text>
+    <text x="64" y="710" font-size="11" letter-spacing="3" opacity=".45">PRODUCT · UX RESEARCH · 2024</text>
+  </g>
+
+  <rect width="1000" height="750" filter="url(#tid-noise)" opacity=".045"/>
+</svg>

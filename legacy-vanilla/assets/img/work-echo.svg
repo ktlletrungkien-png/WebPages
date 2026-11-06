@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 750" role="img" aria-label="Echoes of Io — những vòng tròn đồng tâm quanh một khối đá nguyên khối">
+  <defs>
+    <linearGradient id="echo-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#051517"/>
+      <stop offset="1" stop-color="#0a2323"/>
+    </linearGradient>
+    <linearGradient id="echo-mono" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#020a0a"/>
+      <stop offset=".5" stop-color="#0d3030"/>
+      <stop offset="1" stop-color="#020a0a"/>
+    </linearGradient>
+    <linearGradient id="echo-beam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d9f99d" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#d9f99d" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="echo-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#5eead4" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#5eead4" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="echo-noise">
+      <feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <pattern id="echo-lines" width="1000" height="6" patternUnits="userSpaceOnUse">
+      <rect width="1000" height="1" fill="#d9f99d" opacity=".05"/>
+    </pattern>
+  </defs>
+
+  <rect width="1000" height="750" fill="url(#echo-bg)"/>
+  <rect width="1000" height="750" fill="url(#echo-lines)"/>
+  <circle cx="500" cy="380" r="300" fill="url(#echo-glow)"/>
+
+  <g fill="none" stroke="#5eead4">
+    <circle cx="500" cy="380" r="118" opacity=".28"/>
+    <circle cx="500" cy="380" r="162" opacity=".2" stroke-dasharray="2 8"/>
+    <circle cx="500" cy="380" r="214" opacity=".16"/>
+    <circle cx="500" cy="380" r="274" opacity=".12" stroke-dasharray="1 14"/>
+    <circle cx="500" cy="380" r="338" opacity=".08"/>
+  </g>
+
+  <path d="M500 80l54 230v250h-108V310z" fill="url(#echo-beam)" opacity=".32"/>
+  <rect x="462" y="188" width="76" height="370" rx="3" fill="url(#echo-mono)" stroke="#5eead4" stroke-opacity=".3"/>
+  <rect x="483" y="206" width="5" height="334" fill="#d9f99d" opacity=".55"/>
+  <rect x="500" y="220" width="1.5" height="306" fill="#fff" opacity=".5"/>
+
+  <circle cx="500" cy="182" r="6" fill="#d9f99d"/>
+  <circle cx="500" cy="182" r="18" fill="none" stroke="#d9f99d" stroke-opacity=".35"/>
+  <circle cx="500" cy="182" r="34" fill="none" stroke="#d9f99d" stroke-opacity=".14"/>
+
+  <g fill="#d9f99d" font-family="'Space Grotesk', 'Helvetica Neue', sans-serif">
+    <text x="64" y="84" font-size="11" letter-spacing="4" opacity=".55">UNIVERSE / CASE 04</text>
+    <text x="64" y="662" font-size="34" font-weight="600" letter-spacing="-.5">Echoes of Io</text>
+    <text x="64" y="690" font-size="11" letter-spacing="3" opacity=".45">WORLDBUILDING · NARRATIVE · 2024</text>
+    <text x="936" y="84" font-size="10" letter-spacing="2" text-anchor="end" opacity=".4">SECTOR 09 / IO</text>
+  </g>
+
+  <g stroke="#d9f99d" opacity=".3">
+    <path d="M936 596v20M926 606h20"/>
+    <path d="M64 500h26M77 487v26"/>
+  </g>
+
+  <rect width="1000" height="750" filter="url(#echo-noise)" opacity=".05"/>
+</svg>
